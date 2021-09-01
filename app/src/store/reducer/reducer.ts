@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
-import AddEdge from "./cytoscape_graph";
+import { StartCytoscape } from "./cytoscape_graph";
 
 export default combineReducers({
-  GraphReducer: AddEdge,
+  GraphReducer: StartCytoscape,
 });

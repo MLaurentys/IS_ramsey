@@ -7,7 +7,7 @@ type CytoscapeState = {
   edges: ElementDefinition[];
   styles: Stylesheet[];
   layout: LayoutOptions;
-  cy: Object;
+  cy: cytoscape.Core | undefined;
 };
 
 const initialState: CytoscapeState = {
@@ -63,10 +63,10 @@ const initialState: CytoscapeState = {
     name: "grid",
     rows: 1,
   },
-  cy: {},
+  cy: undefined,
 };
 
-function StartCytoscape(
+export function StartCytoscape(
   state: CytoscapeState = initialState,
   action: PayloadAction
 ): CytoscapeState {
@@ -83,5 +83,3 @@ function StartCytoscape(
   }
   return state;
 }
-
-export default StartCytoscape;
