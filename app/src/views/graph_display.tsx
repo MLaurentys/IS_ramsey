@@ -80,7 +80,6 @@ class GraphDisplay extends Component<any, any> {
   }
 
   render() {
-    console.log(this.state.cy?.getElementById("a"));
     return <div id="cytoscape"> </div>;
   }
 }
