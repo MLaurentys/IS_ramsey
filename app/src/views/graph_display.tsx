@@ -1,15 +1,13 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import cytoscape from "cytoscape";
 import "./graph_display.css";
 
 class GraphDisplay extends Component<any, any> {
-  constructor(props: any) {
-    super(props);
-  }
-
   componentDidMount() {
-    this.props.dispatch({ type: "START_CYTOSCAPE" });
+    this.props.dispatch({
+      type: "cyto/start",
+      payload: { rootElement: document.getElementById("cytoscape") },
+    });
   }
 
   render() {
