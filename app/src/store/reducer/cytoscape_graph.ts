@@ -1,6 +1,7 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { ElementDefinition, Stylesheet, LayoutOptions } from "cytoscape";
 import cytoscape from "cytoscape";
+import { Reducer } from "react";
 
 type CytoscapeState = {
   vertices: ElementDefinition[];
@@ -9,6 +10,10 @@ type CytoscapeState = {
   layout: LayoutOptions;
   cy: cytoscape.Core | undefined;
 };
+
+interface CytoscapeReducerMap {
+  start: Reducer<CytoscapeState, PayloadAction>;
+}
 
 const initialState: CytoscapeState = {
   vertices: [
@@ -82,4 +87,17 @@ export function StartCytoscape(
     };
   }
   return state;
+}
+
+const handlers: CytoscapeReducerMap = Object.seal({
+  start: StartCytoscape,
+});
+
+export function CytoscapeReducer(
+  state: CytoscapeState = initialState,
+  action: PayloadAction
+): CytoscapeState {
+  const splitAction = action.type.split("/");
+  if (splitAction[0] !== "cyto") return state;
+  return handlers[splitAction[1]](state, action);
 }
