@@ -1,5 +1,5 @@
 import { CytoscapeState } from "../../../types/types";
-
+// TODO: use nauty G-6
 export const initialState: CytoscapeState = {
   vertices: [
     {
