@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
+import Graph6Selector from "./graph6_selector";
 import "./graph_display.css";
 
 function DisplayGraph(props: any) {
@@ -13,7 +14,12 @@ function DisplayGraph(props: any) {
     );
   });
 
-  return <div id="cytoscape"> </div>;
+  return (
+    <div>
+      <div id="cytoscape"></div>
+      <Graph6Selector />
+    </div>
+  );
 }
 
 const GiveGraphStoreAccess: any = connect();
