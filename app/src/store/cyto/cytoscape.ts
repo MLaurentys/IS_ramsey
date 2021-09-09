@@ -1,13 +1,15 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { Reducer } from "react";
 
-import { CytoscapeState } from "../../../types/types";
+import { CytoscapeState } from "../../types/types";
 import { initialState } from "./initial_state";
 import { StartCytoscape } from "./start";
 
 interface CytoscapeReducerMap {
   [key: string]: Reducer<CytoscapeState, PayloadAction<any>>;
 }
+
+function NewGraphFromInput(graph6: String) {}
 
 const handlers: CytoscapeReducerMap = Object.seal({
   start: StartCytoscape,

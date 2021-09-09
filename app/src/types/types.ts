@@ -4,8 +4,8 @@ export interface PayloadCytoscapeStart {
   rootElement: HTMLElement;
 }
 
-export interface PayloadGraph6UpdateDisplayed {
-  graph: CytoscapeGraph;
+export interface PayloadGraph6UpdateInput {
+  value: String;
 }
 
 export interface CytoscapeGraph {
@@ -22,7 +22,6 @@ export interface CytoscapeState {
 }
 
 export interface Graph6State {
-  currentGraph: String;
   inputText: String;
   inputError: String;
 }

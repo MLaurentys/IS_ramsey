@@ -1,6 +1,11 @@
-import { CytoscapeState } from "../../../types/types";
+import { CytoscapeState } from "../../types/types";
 // TODO: use nauty G-6
 export const initialState: CytoscapeState = {
+  layout: {
+    name: "grid",
+    rows: 1,
+  },
+  cy: undefined,
   vertices: [
     {
       data: { id: "a" },
@@ -49,9 +54,4 @@ export const initialState: CytoscapeState = {
       },
     },
   ],
-  layout: {
-    name: "grid",
-    rows: 1,
-  },
-  cy: undefined,
 };

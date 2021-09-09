@@ -7,15 +7,17 @@ import React from "react";
 import { Provider } from "react-redux";
 import GraphDisplay from "./views/graph_display";
 import store from "./store/store";
+import Header from "./components/header";
 
 function App() {
   // Provider is used to allow any component to connect to the redux store.
   return (
-    <Provider store={store}>
-      <div>
+    <div>
+      <Header />
+      <Provider store={store}>
         <GraphDisplay />
-      </div>
-    </Provider>
+      </Provider>
+    </div>
   );
 }
 

@@ -1,5 +1,5 @@
-import { PayloadCytoscapeStart } from "../../../types/types";
-import { CytoscapeState } from "../../../types/types";
+import { PayloadCytoscapeStart } from "../../types/types";
+import { CytoscapeState } from "../../types/types";
 import { PayloadAction } from "@reduxjs/toolkit";
 import cytoscape from "cytoscape";
 

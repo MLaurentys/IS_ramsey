@@ -1,25 +1,26 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { Reducer } from "react";
 
-import {
-  Graph6State,
-  PayloadGraph6UpdateDisplayed,
-} from "../../../types/types";
+import { Graph6State, PayloadGraph6UpdateInput } from "../../types/types";
 import initialState from "./initial_state";
 
 interface Graph6ReducerMap {
   [key: string]: Reducer<Graph6State, PayloadAction<any>>;
 }
 
-function UpdateDisplayed(
+function HandleInputText(
   state: Graph6State,
-  payload: PayloadAction<PayloadGraph6UpdateDisplayed>
+  action: PayloadAction<PayloadGraph6UpdateInput>
 ): Graph6State {
-  console.log(payload);
-  return state;
+  return {
+    ...state,
+    inputText: action.payload.value,
+  };
 }
 
-const handlers: Graph6ReducerMap = Object.seal({});
+const handlers: Graph6ReducerMap = Object.seal({
+  input: HandleInputText,
+});
 
 export function Graph6Reducer(
   state: Graph6State = initialState,
