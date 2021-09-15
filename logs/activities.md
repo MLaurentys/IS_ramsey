@@ -4,6 +4,15 @@ This file contains brief descriptions of activities done by date. Its purpose is
 reporting to the student supervisor and maining data on the progress done per
 period of time.
 
+- **08/09/2021:**
+  - Finished Cytoscape to graph6 conversion
+  - Looked for but could not find Bit Array for JS, probably implementing that using Number in the future
+- **07/09/2021:**
+  - Draft of graph6 implementation
+  - Looked for but could not find graph6 <-> cytoscape converter
+  - Experimented with bootstrap css
+- **03/09/2021:**
+  - Studied and understood graph6 format
 - **01/09/2021:**
   - Finished port to redux and achieved a state that I believe the quality of
     the code is good and able to extend without requiring modification
