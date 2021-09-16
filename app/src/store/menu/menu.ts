@@ -5,7 +5,12 @@ interface MenuReducerMap {
   [key: string]: any;
 }
 
-const handlers: MenuReducerMap = Object.seal({});
+const handlers: MenuReducerMap = Object.seal({
+  select: (state: any, payload: any) => {
+    if (state.tabSelected === payload.value) return state;
+    return { ...state, tabSelected: payload.value };
+  },
+});
 
 export function MenuReducer(
   state: any = { tabSelected: "sim" },

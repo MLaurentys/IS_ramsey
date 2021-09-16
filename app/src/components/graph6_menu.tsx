@@ -1,10 +1,8 @@
 import { connect } from "react-redux";
 
 import { CytoToGraph6 } from "../store/graph6/format_converter";
-import "./graph_display.css";
 
 function Graph6Menu(props: any) {
-  console.log("render G6 menu");
   return (
     <div>
       <p>Graph6 import/export</p>
@@ -27,7 +25,7 @@ function Graph6Menu(props: any) {
         onClick={() =>
           props.dispatch({
             type: "cyto/new",
-            payload: { from: props.graph6.inputText },
+            payload: { value: props.graph6.inputText },
           })
         }
       >

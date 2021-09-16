@@ -8,12 +8,22 @@ interface SimulationReducerMap {
 
 const handlers: SimulationReducerMap = Object.seal({
   add: (state: any, payload: any) => {
-    return [...state, JSON.parse(payload.json)];
+    return {
+      ...state,
+      simulations: [...state.simulations, JSON.parse(payload.json)],
+    };
+  },
+  select: (state: any, payload: any) => {
+    if (state.selected === payload.value) return state;
+    return { ...state, selected: payload.value };
   },
 });
 
 export function SimulationReducer(
-  state: any = [treeSimulation],
+  state: any = {
+    simulations: [treeSimulation],
+    selected: 0,
+  },
   action: PayloadAction
 ): any {
   const splitAction = action.type.split("/");

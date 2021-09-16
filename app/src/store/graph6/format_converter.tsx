@@ -1,12 +1,8 @@
-import { Core } from "cytoscape";
+import cytoscape, { Core, ElementDefinition } from "cytoscape";
 
-export function CytoToGraph6(cyto: Core): String {
-  if (cyto === undefined) return "";
+// Cyto to graph6
+function getUpperTriangle(cyto: Core): string {
   const vertices = cyto.nodes().map((node) => node.data().id);
-  const numOfBits = Math.round(vertices.length * (vertices.length - 1)) / 2;
-  const bitsToAdd = (6 - (numOfBits % 6)) % 6;
-  //console.log("Number of bits: " + numOfBits);
-  // Iterates through upper triagle and fills bit array
   let formated = ""; //TODO: find Bit Array Lib
   for (let i = 0; i < vertices.length; ++i) {
     const edgesFromVert = new Set(
@@ -19,6 +15,64 @@ export function CytoToGraph6(cyto: Core): String {
       else formated += "0";
     }
   }
+  const bitsToAdd = (6 - (formated.length % 6)) % 6;
   for (let i = 0; i < bitsToAdd; ++i) formated += "0";
   return formated;
+}
+
+function decimalFromBinary(numVer: number, upTri: string): number[] {
+  let decimals = [numVer];
+  for (let i = 0; i < upTri.length; i += 6)
+    decimals.push(parseInt(upTri.slice(i, i + 6), 2));
+  return decimals;
+}
+
+export function CytoToGraph6(cyto: Core): string {
+  if (cyto === undefined) return "";
+  const upperTriangle = getUpperTriangle(cyto);
+  const decimals = decimalFromBinary(cyto.nodes().length, upperTriangle);
+  const letters = decimals.map((decimal) => String.fromCharCode(decimal + 63));
+  return letters.join("");
+}
+
+// Graph6 to cyto
+export function graph6ToCyto(
+  representation: string,
+  cyto: Core | undefined
+): any {
+  if (!cyto) return;
+  let decimals = representation
+    .split("")
+    .map((char) => char.charCodeAt(0) - 63);
+  console.log(decimals);
+  const numVert = decimals.shift() ?? 0;
+  const binary = decimals.map((dec) => dec.toString(2)).join();
+  console.log("bin:", binary);
+  // Removes all vertices and, therefore, all edges
+  cyto.remove("node");
+  const newVerts: cytoscape.ElementDefinition[] = [];
+  const newEdges: ElementDefinition[] = [];
+  for (let i = 0; i < numVert; ++i) newVerts.push({ data: { id: `${i}` } });
+  let i = 0;
+  let j = 1;
+  binary.split("").some((digit) => {
+    if (j === numVert) {
+      i += 1;
+      j = i + 1;
+      if (i === numVert) return true;
+    }
+    if (digit === "1")
+      newEdges.push({
+        data: { id: `${i}-${j}`, source: `${i}`, target: `${j}` },
+      });
+    j++;
+  });
+  cyto.add(newVerts);
+  cyto.add(newEdges);
+  // @ts-ignore
+  cyto
+    .layout({
+      name: "random",
+    })
+    .run();
 }

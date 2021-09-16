@@ -25,3 +25,5 @@ export interface Graph6State {
   inputText: String;
   inputError: String;
 }
+
+export type StrMapToJSX = { [key: string]: () => JSX.Element };

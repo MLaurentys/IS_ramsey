@@ -1,9 +1,32 @@
 import { useEffect } from "react";
+import { Col, Row } from "react-bootstrap";
 import { connect } from "react-redux";
-import Graph6Menu from "./graph6_menu";
-import "./graph_display.css";
+import Graph6Menu from "../components/graph6_menu";
+import { StrMapToJSX } from "./../types/types";
 
-function DisplayGraph(props: any) {
+function renderStandard() {
+  return <></>;
+}
+
+function renderSimulation() {
+  return (
+    <>
+      <Row>
+        <Col md={2} />
+        <Col md={8}>
+          <h2></h2>
+        </Col>
+      </Row>
+    </>
+  );
+}
+
+const renders: StrMapToJSX = Object.seal({
+  g6: renderStandard,
+  sim: renderStandard,
+});
+
+function DisplayGraph(props: any): JSX.Element {
   useEffect(() => {
     props.dispatch(
       {
@@ -13,14 +36,33 @@ function DisplayGraph(props: any) {
       []
     );
   });
-  // cytoscape div is used by the cytoscape lib. That handles its own state.
+  // cytoscape div is used by the cytoscape lib. That handles its own state
   return (
-    <div style={{ backgroundColor: "black" }}>
-      <div id="cytoscape"></div>
-      <Graph6Menu />
-    </div>
+    <>
+      <Row style={{ height: "600px" }}>
+        <Col md={1}></Col>
+        <Col
+          className="pl-0 pr-0"
+          style={{
+            backgroundColor: "grey",
+            border: "10px solid black",
+            padding: "0",
+          }}
+          md={10}
+          id="cytoscape"
+        ></Col>
+      </Row>
+      {renders[props.tabSelected]()}
+    </>
   );
 }
 
-const GiveGraphStoreAccess: any = connect();
+function MapStateToProps(state: any) {
+  return {
+    tabSelected: state.menu.tabSelected,
+    simulation: state.simu.simulations,
+  };
+}
+
+const GiveGraphStoreAccess: any = connect(MapStateToProps);
 export default GiveGraphStoreAccess(DisplayGraph);

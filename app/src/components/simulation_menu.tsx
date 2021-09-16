@@ -2,30 +2,22 @@ import { Component } from "react";
 import { Button, Col, Row, Tab, Tabs } from "react-bootstrap";
 import { connect } from "react-redux";
 
-class SelectionMenu extends Component<
-  { simulations: any[] },
-  { selected: number }
-> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      selected: 0,
-    };
-  }
-
+class SelectionMenu extends Component<any, {}> {
   render() {
-    console.log(this.props);
     return (
       <>
         <Col md={12} style={{ border: "5px solid black" }}>
           <Row>
             <Tabs
               onSelect={(evtKey) => {
-                if (`${this.state.selected}` !== evtKey)
-                  this.setState({ selected: parseInt(evtKey ?? "0") });
+                if (`${this.props.selected}` !== evtKey)
+                  this.props.dispatch({
+                    type: "simu/",
+                    selected: parseInt(evtKey ?? "0"),
+                  });
               }}
             >
-              {this.props.simulations.map((simulation, idx) => {
+              {this.props.simulations.map((simulation: any, idx: number) => {
                 let simulationName = simulation.title;
                 return (
                   <Tab
@@ -46,7 +38,7 @@ class SelectionMenu extends Component<
             <textarea
               style={{ height: "400px" }}
               defaultValue={JSON.stringify(
-                this.props.simulations[this.state.selected],
+                this.props.simulations[this.props.selected],
                 null,
                 4
               )}
@@ -60,7 +52,8 @@ class SelectionMenu extends Component<
 
 function MapStateToProps(state: any) {
   return {
-    simulations: state.simu,
+    simulations: state.simu.simulations,
+    selected: state.simu.selected,
   };
 }
 
