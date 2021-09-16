@@ -15,7 +15,7 @@ function DisplayGraph(props: any) {
   });
   // cytoscape div is used by the cytoscape lib. That handles its own state.
   return (
-    <div>
+    <div style={{ backgroundColor: "black" }}>
       <div id="cytoscape"></div>
       <Graph6Menu />
     </div>

@@ -11,6 +11,7 @@
     "@types/react-dom": "^17.0.9",
     "@types/react-redux": "^7.1.18",
     "@types/redux": "^3.6.0",
+    "bootstrap": "^5.1.0",
     "cytoscape": "^3.19.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.3",
