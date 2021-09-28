@@ -4,8 +4,12 @@ This file contains brief descriptions of activities done by date. Its purpose is
 reporting to the student supervisor and maining data on the progress done per
 period of time.
 
+- **WEEK 5:**
+  - Fixed Cyto to Graph6 representation, but there might be a problem with recalculating it repeatedely
+  - Started Graph6 to Cyto
+  - Started the simulation tool
 - **08/09/2021:**
-  - Finished Cytoscape to graph6 conversion
+  - Started Cytoscape to graph6 conversion
   - Looked for but could not find Bit Array for JS, probably implementing that using Number in the future
 - **07/09/2021:**
   - Draft of graph6 implementation
