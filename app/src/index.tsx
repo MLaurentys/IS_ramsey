@@ -12,10 +12,11 @@ import App from "./app";
 //  windows element
 window.React = React;
 
-// Strict Mode is disabled in production because cytoscape and
+// Strict Mode is disabled in production because redux makes use of non-strict
+//  stuff and those warnings are annoying during development
 ReactDOM.render(
-  <React.StrictMode>
-    <App />,
-  </React.StrictMode>,
+  //<React.StrictMode>
+  <App />,
+  //</React.StrictMode>,
   document.getElementById("root")
 );

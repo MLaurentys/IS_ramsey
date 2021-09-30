@@ -69,10 +69,10 @@ export function graph6ToCyto(
   });
   cyto.add(newVerts);
   cyto.add(newEdges);
-  // @ts-ignore
   cyto
     .layout({
-      name: "random",
+      name: "fcose",
+      // @ts-ignore
     })
     .run();
 }
