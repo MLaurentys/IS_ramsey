@@ -1,8 +1,14 @@
-# Activities
+# Activities {text-align:center}
 
 This file contains brief descriptions of activities done by date. Its purpose is
 reporting to the student supervisor and maining data on the progress done per
 period of time.
+
+---
+
+|: Week :|: Proposed :|
+
+---
 
 - **WEEK 5:**
   - Fixed Cyto to Graph6 representation, but there might be a problem with recalculating it repeatedely

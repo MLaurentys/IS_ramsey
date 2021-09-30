@@ -1,0 +1,15 @@
+#main-table > div:nth-child(odd) {
+  background-color: gray;
+}
+#main-table > div:nth-child(even) {
+  background-color: lightgray;
+}
+
+#main-table div {
+  border: 1px solid black;
+}
+
+div {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
