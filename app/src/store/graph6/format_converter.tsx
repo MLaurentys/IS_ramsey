@@ -1,6 +1,8 @@
 import cytoscape, { Core, ElementDefinition } from "cytoscape";
 
+//----------------
 // Cyto to graph6
+//----------------
 function getUpperTriangle(cyto: Core): string {
   const vertices = cyto.nodes().map((node) => node.data().id);
   let formated = ""; //TODO: find Bit Array Lib
@@ -35,7 +37,12 @@ export function CytoToGraph6(cyto: Core): string {
   return letters.join("");
 }
 
+//----------------
 // Graph6 to cyto
+//----------------
+
+function GetGraphSize() {}
+
 export function graph6ToCyto(
   representation: string,
   cyto: Core | undefined
