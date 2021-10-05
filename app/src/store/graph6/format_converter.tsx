@@ -13,6 +13,7 @@ function getEncodedGraphLen(cyto: Core): string {
 
 function getUpperTriangle(cyto: Core): string {
   const vertices = cyto.nodes().map((node) => node.data().id);
+  let upperTriangle = {};
   let formated = ""; //TODO: find Bit Array Lib
   for (let i = 0; i < vertices.length; ++i) {
     const edgesFromVert = new Set(
@@ -21,17 +22,18 @@ function getUpperTriangle(cyto: Core): string {
         .map((edge) => edge.data().target)
     );
     for (let j = i + 1; j < vertices.length; ++j) {
-      if (edgesFromVert.has(vertices[j])) formated += "1";
-      else formated += "0";
+      upperTriangle[`${i}_${j}`] = Number(edgesFromVert.has(vertices[j]));
     }
   }
+  for (let j = 1; j < vertices.length; j++)
+    for (let i = 0; i < j; i++) formated += upperTriangle[`${i}_${j}`];
   const bitsToAdd = (6 - (formated.length % 6)) % 6;
   for (let i = 0; i < bitsToAdd; ++i) formated += "0";
   return formated;
 }
 
-function decimalFromBinary(numVer: number, upTri: string): number[] {
-  let decimals = [numVer];
+function decimalFromBinary(upTri: string): number[] {
+  let decimals = [];
   for (let i = 0; i < upTri.length; i += 6)
     decimals.push(parseInt(upTri.slice(i, i + 6), 2));
   return decimals;
@@ -45,7 +47,7 @@ export function CytoToGraph6(cyto: Core): string {
   if (cyto === undefined) return "";
   const graphLenEncoded = getEncodedGraphLen(cyto);
   const upperTriangle = getUpperTriangle(cyto);
-  const decimals = decimalFromBinary(cyto.nodes().length, upperTriangle);
+  const decimals = decimalFromBinary(upperTriangle);
   return graphLenEncoded + decimalsToFormatedString(decimals);
 }
 
@@ -53,45 +55,46 @@ export function CytoToGraph6(cyto: Core): string {
 // Graph6 to cyto
 //----------------
 
-function getGraphSize() {}
+function getDecimals(graph6Str) {
+  return graph6Str.split("").map((char) => char.charCodeAt(0));
+}
 
-export function graph6ToCyto(
-  representation: string,
-  cyto: Core | undefined
-): any {
-  if (!cyto) return;
-  let decimals = representation
-    .split("")
-    .map((char) => char.charCodeAt(0) - 63);
-  console.log(decimals);
-  const numVert = decimals.shift() ?? 0;
-  const binary = decimals.map((dec) => dec.toString(2)).join();
-  console.log("bin:", binary);
-  // Removes all vertices and, therefore, all edges
-  cyto.remove("node");
+function getBinaryRepresentation(graph6Str: string) {
+  return getDecimals(graph6Str)
+    .map((num) => (num - 63).toString(2))
+    .join("");
+}
+
+function buildNewGraph(numVerts: number, binUpper: string, cyto: Core) {
   const newVerts: cytoscape.ElementDefinition[] = [];
   const newEdges: ElementDefinition[] = [];
-  for (let i = 0; i < numVert; ++i) newVerts.push({ data: { id: `${i}` } });
-  let i = 0;
-  let j = 1;
-  binary.split("").some((digit) => {
-    if (j === numVert) {
-      i += 1;
-      j = i + 1;
-      if (i === numVert) return true;
-    }
-    if (digit === "1")
-      newEdges.push({
-        data: { id: `${i}-${j}`, source: `${i}`, target: `${j}` },
-      });
-    j++;
-  });
+  for (let i = 0; i < numVerts; ++i) newVerts.push({ data: { id: `${i}` } });
+  let aux = 0;
+  for (let j = 1; j < numVerts; ++j)
+    for (let i = 0; i < j; ++i)
+      if (binUpper[aux++] === "1")
+        newEdges.push({
+          data: { id: `${i}-${j}`, source: `${i}`, target: `${j}` },
+        });
   cyto.add(newVerts);
   cyto.add(newEdges);
   cyto
     .layout({
       name: "fcose",
       // @ts-ignore
+      randomize: false,
     })
     .run();
+}
+
+export function graph6ToCyto(
+  representation: string,
+  cyto: Core | undefined
+): any {
+  if (!cyto) return;
+  const numVerts = representation.charCodeAt(0) - 63;
+  const binUpper = getBinaryRepresentation(representation.slice(1));
+  // Removes all vertices and, therefore, all edges
+  cyto.remove("node");
+  buildNewGraph(numVerts, binUpper, cyto);
 }
