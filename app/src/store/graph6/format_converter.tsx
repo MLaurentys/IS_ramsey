@@ -1,8 +1,16 @@
+import { exception } from "console";
 import cytoscape, { Core, ElementDefinition } from "cytoscape";
 
 //----------------
 // Cyto to graph6
 //----------------
+
+function getEncodedGraphLen(cyto: Core): string {
+  const nVerts = cyto.nodes().length;
+  if (0 <= nVerts && nVerts <= 62) return String.fromCharCode(nVerts + 63);
+  throw "graph has too many vertices";
+}
+
 function getUpperTriangle(cyto: Core): string {
   const vertices = cyto.nodes().map((node) => node.data().id);
   let formated = ""; //TODO: find Bit Array Lib
@@ -29,19 +37,23 @@ function decimalFromBinary(numVer: number, upTri: string): number[] {
   return decimals;
 }
 
+function decimalsToFormatedString(decimals: number[]): string {
+  return decimals.map((decimal) => String.fromCharCode(decimal + 63)).join("");
+}
+
 export function CytoToGraph6(cyto: Core): string {
   if (cyto === undefined) return "";
+  const graphLenEncoded = getEncodedGraphLen(cyto);
   const upperTriangle = getUpperTriangle(cyto);
   const decimals = decimalFromBinary(cyto.nodes().length, upperTriangle);
-  const letters = decimals.map((decimal) => String.fromCharCode(decimal + 63));
-  return letters.join("");
+  return graphLenEncoded + decimalsToFormatedString(decimals);
 }
 
 //----------------
 // Graph6 to cyto
 //----------------
 
-function GetGraphSize() {}
+function getGraphSize() {}
 
 export function graph6ToCyto(
   representation: string,
