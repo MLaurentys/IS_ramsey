@@ -7,12 +7,9 @@ import { initialState } from "./initial_state";
 import { StartCytoscape } from "./start";
 import { addStyles } from "../../utils/misc";
 
-function buildNewGraph(
-  graphInfo:any,
-  cyto: Core
-) {
-  console.log("cyto2", cyto);
+function buildNewGraph(graphInfo: any, cyto: Core) {
   // Removes all vertices and, therefore, all edges
+  console.log(graphInfo.edges[0]);
   cyto.remove("node");
   cyto.add(graphInfo.vertices);
   cyto.add(graphInfo.edges);
@@ -20,7 +17,6 @@ function buildNewGraph(
     .layout({
       name: "fcose",
       // @ts-ignore
-      randomize: false,
     })
     .run();
 }
@@ -31,7 +27,7 @@ interface CytoscapeReducerMap {
 
 function NewGraphFromInput(state: CytoscapeState, action: PayloadAction<any>) {
   const { vertices, edges } = graph6ToCyto(action.payload.value);
-  buildNewGraph({vertices, edges}, state.cy);
+  buildNewGraph({ vertices, edges }, state.cy);
   return state;
 }
 
@@ -41,7 +37,7 @@ const handlers: CytoscapeReducerMap = Object.seal({
   renderStep: (state: any, action: any) => {
     const { vertices, edges } = graph6ToCyto(action.payload.graph);
     const coloredEdges = addStyles(action.payload.colors, edges);
-    buildNewGraph({vertices, edges}, state.cy);
+    buildNewGraph({ vertices, edges: coloredEdges }, state.cy);
     return state;
   },
 });

@@ -24,8 +24,9 @@ export const initialState: CytoscapeState = {
     },
   ],
   edges: [
-    { data: { id: "ac", source: "a", target: "c" } },
+    { classes: "blue-edge", data: { id: "ac", source: "a", target: "c" } },
     {
+      classes: "blue-edge",
       data: { id: "ae", source: "a", target: "e" },
     },
     {

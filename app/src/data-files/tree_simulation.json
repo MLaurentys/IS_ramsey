@@ -11,7 +11,7 @@
     },
     {
       "graph": "aDc",
-      "colors": "",
+      "colors": "bbbbb",
       "title": "Step 2",
       "description": "We have a larger graph",
       "duration": 5000

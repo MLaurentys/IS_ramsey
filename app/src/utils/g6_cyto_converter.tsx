@@ -68,12 +68,17 @@ function getBinaryRepresentation(graph6Str: string) {
 function getGraph(numVerts: number, binUpper: string): any {
   const newVerts: ElementDefinition[] = [];
   const newEdges: ElementDefinition[] = [];
-  for (let i = 0; i < numVerts; ++i) newVerts.push({ data: { id: `${i}` } });
+  for (let i = 0; i < numVerts; ++i)
+    newVerts.push({
+      group: "nodes",
+      data: { id: `${i}` },
+    });
   let aux = 0;
   for (let j = 1; j < numVerts; ++j)
     for (let i = 0; i < j; ++i)
       if (binUpper[aux++] === "1")
         newEdges.push({
+          group: "edges",
           data: { id: `${i}-${j}`, source: `${i}`, target: `${j}` },
         });
   return { vertices: newVerts, edges: newEdges };
