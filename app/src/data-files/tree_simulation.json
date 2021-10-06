@@ -5,15 +5,15 @@
     {
       "graph": "GDc",
       "colors": "",
-      "title": "",
-      "description": "",
+      "title": "Step 1",
+      "description": "We have a graph",
       "duration": 3000
     },
     {
       "graph": "aDc",
       "colors": "",
-      "title": "",
-      "description": "",
+      "title": "Step 2",
+      "description": "We have a larger graph",
       "duration": 5000
     }
   ]

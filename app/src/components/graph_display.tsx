@@ -52,6 +52,16 @@ function renderSimulation(props) {
           <Graph />
         </Col>
       </Row>
+      <Row>
+        <Col>
+          <h4>{props.stepTitle}</h4>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <p>{props.stepDescription}</p>
+        </Col>
+      </Row>
     </>
   );
 }
@@ -62,6 +72,7 @@ const renders = Object.seal({
 });
 
 function DisplayGraph(props: any): JSX.Element {
+  console.log(props.simulation);
   // cytoscape div is used by the cytoscape lib. That handles its own state
   return <>{renders[props.tabSelected](props)}</>;
 }
@@ -71,6 +82,8 @@ function MapStateToProps(state: any) {
     tabSelected: state.menu.tabSelected,
     simulations: state.simu.simulations,
     selected: state.simu.selected,
+    stepTitle: state.simu.stepTitle,
+    stepDescription: state.simu.stepDescription,
   };
 }
 
