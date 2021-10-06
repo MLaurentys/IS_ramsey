@@ -3,11 +3,18 @@
   "description": "Bla bla",
   "steps": [
     {
-      "graph": "231",
+      "graph": "GDc",
       "colors": "",
       "title": "",
       "description": "",
-      "duration": 3.0
+      "duration": 3000
+    },
+    {
+      "graph": "aDc",
+      "colors": "",
+      "title": "",
+      "description": "",
+      "duration": 5000
     }
   ]
 }

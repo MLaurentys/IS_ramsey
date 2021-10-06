@@ -18,6 +18,10 @@ function NewGraphFromInput(state: CytoscapeState, action: PayloadAction<any>) {
 const handlers: CytoscapeReducerMap = Object.seal({
   start: StartCytoscape,
   new: NewGraphFromInput,
+  renderStep: (state: any, action: any) => {
+    graph6ToCyto(action.payload.graph, state.cy);
+    return state;
+  },
 });
 
 export function CytoscapeReducer(
