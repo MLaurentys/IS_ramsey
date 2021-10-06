@@ -44,7 +44,6 @@ export const initialState: CytoscapeState = {
         label: "data(id)",
       },
     },
-
     {
       selector: "edge",
       style: {
@@ -52,6 +51,18 @@ export const initialState: CytoscapeState = {
         "line-color": "#ccc",
         "target-arrow-color": "#ccc",
         "curve-style": "bezier",
+      },
+    },
+    {
+      selector: ".red-edge",
+      style: {
+        "line-color": "#ff0000",
+      },
+    },
+    {
+      selector: ".blue-edge",
+      style: {
+        "line-color": "#0000ff",
       },
     },
     {

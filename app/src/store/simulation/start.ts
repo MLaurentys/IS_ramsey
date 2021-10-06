@@ -10,8 +10,6 @@ function renderStep(stepInfo) {
     payload: {
       graph: stepInfo.graph,
       colors: stepInfo.colors,
-      title: stepInfo.title,
-      description: stepInfo.description,
     },
   });
 }
