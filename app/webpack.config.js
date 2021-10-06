@@ -7,6 +7,9 @@ module.exports = {
     filename: "build.js",
     path: path.join(__dirname, "/dist"),
   },
+  devServer: {
+    watchContentBase: true,
+  },
   module: {
     rules: [
       {
