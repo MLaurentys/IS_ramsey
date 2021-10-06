@@ -72,8 +72,6 @@ const renders = Object.seal({
 });
 
 function DisplayGraph(props: any): JSX.Element {
-  console.log(props.simulation);
-  // cytoscape div is used by the cytoscape lib. That handles its own state
   return <>{renders[props.tabSelected](props)}</>;
 }
 

@@ -1,17 +1,37 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { Reducer } from "react";
-
+import { Core, ElementDefinition } from "cytoscape";
 import { CytoscapeState } from "../../types/types";
-import { graph6ToCyto } from "../graph6/format_converter";
+import { graph6ToCyto } from "../../utils/g6_cyto_converter";
 import { initialState } from "./initial_state";
 import { StartCytoscape } from "./start";
+
+function buildNewGraph(
+  newVerts: ElementDefinition[],
+  newEdges: ElementDefinition[],
+  cyto: Core
+) {
+  // Removes all vertices and, therefore, all edges
+  cyto.remove("node");
+  cyto.remove("styles");
+  cyto.add(newVerts);
+  cyto.add(newEdges);
+  cyto
+    .layout({
+      name: "fcose",
+      // @ts-ignore
+      randomize: false,
+    })
+    .run();
+}
 
 interface CytoscapeReducerMap {
   [key: string]: Reducer<CytoscapeState, PayloadAction<any>>;
 }
 
 function NewGraphFromInput(state: CytoscapeState, action: PayloadAction<any>) {
-  graph6ToCyto(action.payload.value, state.cy);
+  const { vertices, edges } = graph6ToCyto(action.payload.value);
+  buildNewGraph(vertices, edges, state.cy);
   return state;
 }
 
@@ -19,7 +39,8 @@ const handlers: CytoscapeReducerMap = Object.seal({
   start: StartCytoscape,
   new: NewGraphFromInput,
   renderStep: (state: any, action: any) => {
-    graph6ToCyto(action.payload.graph, state.cy);
+    const { vertices, edges } = graph6ToCyto(action.payload.graph);
+    buildNewGraph(vertices, edges, state.cy);
     return state;
   },
 });
