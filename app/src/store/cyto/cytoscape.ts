@@ -5,17 +5,17 @@ import { CytoscapeState } from "../../types/types";
 import { graph6ToCyto } from "../../utils/g6_cyto_converter";
 import { initialState } from "./initial_state";
 import { StartCytoscape } from "./start";
+import { createCytoStyles } from "../../utils/misc";
 
 function buildNewGraph(
-  newVerts: ElementDefinition[],
-  newEdges: ElementDefinition[],
+  graphInfo:any,
   cyto: Core
 ) {
   // Removes all vertices and, therefore, all edges
   cyto.remove("node");
   cyto.remove("styles");
-  cyto.add(newVerts);
-  cyto.add(newEdges);
+  cyto.add(graphInfo.vertices);
+  cyto.add(graphInfo.edges);
   cyto
     .layout({
       name: "fcose",
@@ -31,7 +31,8 @@ interface CytoscapeReducerMap {
 
 function NewGraphFromInput(state: CytoscapeState, action: PayloadAction<any>) {
   const { vertices, edges } = graph6ToCyto(action.payload.value);
-  buildNewGraph(vertices, edges, state.cy);
+  const styles = createCytoStyles(action.payload.colors, edges);
+  buildNewGraph({vertices, edges, styles}, state.cy);
   return state;
 }
 

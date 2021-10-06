@@ -59,7 +59,6 @@ export const initialState: CytoscapeState = {
       style: {
         width: 3,
         "line-color": "#f00",
-        "target-arrow-color": "#ccc",
         "curve-style": "bezier",
       },
     },
