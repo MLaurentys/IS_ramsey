@@ -4,8 +4,15 @@ import { PayloadAction } from "@reduxjs/toolkit";
 import cytoscape from "cytoscape";
 import coseBilkent from "cytoscape-cose-bilkent";
 import fcose from "cytoscape-fcose";
+import dagre from "cytoscape-dagre";
+import elk from "cytoscape-elk";
+import cola from "cytoscape-cola";
+
+cytoscape.use(cola);
+cytoscape.use(elk);
 cytoscape.use(coseBilkent);
 cytoscape.use(fcose);
+cytoscape.use(dagre);
 
 export function StartCytoscape(
   state: CytoscapeState,

@@ -15,8 +15,9 @@ function buildNewGraph(graphInfo: any, cyto: Core) {
   cyto.add(graphInfo.edges);
   cyto
     .layout({
-      name: "fcose",
+      name: "cose-bilkent",
       // @ts-ignore
+      animate: false,
     })
     .run();
 }

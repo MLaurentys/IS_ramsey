@@ -17,7 +17,7 @@ import "./stylesheet.css";
 function App() {
   // Provider is used to allow any component to connect to the redux store.
   return (
-    <Container style={{ backgroundColor: "#d9b382" }}>
+    <Container style={{ backgroundColor: "#d9b382", height: "100vh" }}>
       <Row>
         <Header />
       </Row>

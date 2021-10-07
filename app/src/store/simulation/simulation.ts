@@ -1,7 +1,8 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { Reducer } from "react";
-import treeSimulation from "../../data-files/tree_simulation.json";
+import treeSimulation from "../../data-files/tree_simulation.js";
 import farysSimulation from "../../data-files/farys_simulation.json";
+import testSimulation from "../../data-files/test_simulation.js";
 import { startSimulation } from "./start";
 import { abortSimulation } from "./abort";
 
@@ -46,7 +47,7 @@ const handlers: SimulationReducerMap = Object.seal({
 
 export function SimulationReducer(
   state: any = {
-    simulations: [treeSimulation, farysSimulation],
+    simulations: [testSimulation, treeSimulation, farysSimulation],
     selected: 0,
     simulation: [],
     stepTimeoutId: null,

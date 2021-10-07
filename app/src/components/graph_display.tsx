@@ -50,16 +50,17 @@ function renderSimulation(props) {
         >
           <Graph />
         </Col>
-        <Col></Col>
-      </Row>
-      <Row>
-        <Col>
-          <h4>{props.stepTitle}</h4>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <p>{props.stepDescription}</p>
+        <Col md={6}>
+          <Row>
+            <Col>
+              <h4>{props.stepTitle}</h4>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <p>{props.stepDescription}</p>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </>
