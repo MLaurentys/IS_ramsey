@@ -4,16 +4,16 @@
   "steps": [
     {
       "graph": "GDc",
-      "colors": "",
-      "title": "",
-      "description": "",
+      "colors": "rrrrr",
+      "title": "Step 1",
+      "description": "We have a graph",
       "duration": 3000
     },
     {
       "graph": "aDc",
-      "colors": "",
-      "title": "",
-      "description": "",
+      "colors": "bbbbb",
+      "title": "Step 2",
+      "description": "We have a larger graph",
       "duration": 5000
     }
   ]

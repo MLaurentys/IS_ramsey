@@ -24,8 +24,9 @@ export const initialState: CytoscapeState = {
     },
   ],
   edges: [
-    { data: { id: "ac", source: "a", target: "c" } },
+    { classes: "blue-edge", data: { id: "ac", source: "a", target: "c" } },
     {
+      classes: "blue-edge",
       data: { id: "ae", source: "a", target: "e" },
     },
     {
@@ -44,7 +45,6 @@ export const initialState: CytoscapeState = {
         label: "data(id)",
       },
     },
-
     {
       selector: "edge",
       style: {
@@ -55,11 +55,22 @@ export const initialState: CytoscapeState = {
       },
     },
     {
+      selector: ".red-edge",
+      style: {
+        "line-color": "#ff0000",
+      },
+    },
+    {
+      selector: ".blue-edge",
+      style: {
+        "line-color": "#0000ff",
+      },
+    },
+    {
       selector: "#ac",
       style: {
         width: 3,
         "line-color": "#f00",
-        "target-arrow-color": "#ccc",
         "curve-style": "bezier",
       },
     },

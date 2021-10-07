@@ -25,10 +25,16 @@ const handlers: SimulationReducerMap = Object.seal({
     return { ...state, selected: payload.value };
   },
   run: (state: any, payload: any) => {
-    console.log("begin");
     setTimeout(() => state.simulation[0]());
     const newSimu = state.simulation.slice(1);
     return { ...state, simulation: newSimu };
+  },
+  setStepInfo: (state, payload) => {
+    return {
+      ...state,
+      stepTitle: payload.payload.stepTitle,
+      stepDescription: payload.payload.stepDescription,
+    };
   },
   runNextStep: (state: any, payload: any) => {
     if (state.simulation.length === 0) return state;
@@ -44,6 +50,8 @@ export function SimulationReducer(
     selected: 0,
     simulation: [],
     stepTimeoutId: null,
+    stepTitle: "",
+    stepDescription: "",
   },
   action: PayloadAction
 ): any {

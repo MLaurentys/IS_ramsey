@@ -65,36 +65,27 @@ function getBinaryRepresentation(graph6Str: string) {
     .join("");
 }
 
-function buildNewGraph(numVerts: number, binUpper: string, cyto: Core) {
-  const newVerts: cytoscape.ElementDefinition[] = [];
+function getGraph(numVerts: number, binUpper: string): any {
+  const newVerts: ElementDefinition[] = [];
   const newEdges: ElementDefinition[] = [];
-  for (let i = 0; i < numVerts; ++i) newVerts.push({ data: { id: `${i}` } });
+  for (let i = 0; i < numVerts; ++i)
+    newVerts.push({
+      group: "nodes",
+      data: { id: `${i}` },
+    });
   let aux = 0;
   for (let j = 1; j < numVerts; ++j)
     for (let i = 0; i < j; ++i)
       if (binUpper[aux++] === "1")
         newEdges.push({
+          group: "edges",
           data: { id: `${i}-${j}`, source: `${i}`, target: `${j}` },
         });
-  cyto.add(newVerts);
-  cyto.add(newEdges);
-  cyto
-    .layout({
-      name: "fcose",
-      // @ts-ignore
-      randomize: false,
-    })
-    .run();
+  return { vertices: newVerts, edges: newEdges };
 }
 
-export function graph6ToCyto(
-  representation: string,
-  cyto: Core | undefined
-): any {
-  if (!cyto) return;
+export function graph6ToCyto(representation: string): any {
   const numVerts = representation.charCodeAt(0) - 63;
   const binUpper = getBinaryRepresentation(representation.slice(1));
-  // Removes all vertices and, therefore, all edges
-  cyto.remove("node");
-  buildNewGraph(numVerts, binUpper, cyto);
+  return getGraph(numVerts, binUpper);
 }

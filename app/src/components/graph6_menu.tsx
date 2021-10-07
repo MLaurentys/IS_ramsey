@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { CytoToGraph6 } from "../store/graph6/format_converter";
+import { CytoToGraph6 } from "../utils/g6_cyto_converter";
 
 function Graph6Menu(props: any) {
   return (
