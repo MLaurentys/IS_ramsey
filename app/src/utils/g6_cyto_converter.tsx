@@ -1,4 +1,3 @@
-import { exception } from "console";
 import cytoscape, { Core, ElementDefinition } from "cytoscape";
 
 //----------------
@@ -55,6 +54,10 @@ export function CytoToGraph6(cyto: Core): string {
 // Graph6 to cyto
 //----------------
 
+function padBinary(bin: string): string {
+  return "0".repeat(6 - bin.length) + bin;
+}
+
 function getDecimals(graph6Str) {
   return graph6Str.split("").map((char) => char.charCodeAt(0));
 }
@@ -62,6 +65,7 @@ function getDecimals(graph6Str) {
 function getBinaryRepresentation(graph6Str: string) {
   return getDecimals(graph6Str)
     .map((num) => (num - 63).toString(2))
+    .map((bin) => padBinary(bin))
     .join("");
 }
 
@@ -87,5 +91,6 @@ function getGraph(numVerts: number, binUpper: string): any {
 export function graph6ToCyto(representation: string): any {
   const numVerts = representation.charCodeAt(0) - 63;
   const binUpper = getBinaryRepresentation(representation.slice(1));
+  console.log(binUpper);
   return getGraph(numVerts, binUpper);
 }
