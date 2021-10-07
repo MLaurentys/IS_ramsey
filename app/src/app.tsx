@@ -12,6 +12,8 @@ import store from "./store/store";
 import Header from "./components/header";
 import Menu from "./views/menu";
 
+import "./stylesheet.css";
+
 function App() {
   // Provider is used to allow any component to connect to the redux store.
   return (
@@ -21,10 +23,10 @@ function App() {
       </Row>
       <Provider store={store}>
         <Row>
-          <Col md={7} className="mr-3">
+          <Col md={9} className="mr-3">
             <GraphDisplay />
           </Col>
-          <Col md={5} className="ml-3">
+          <Col md={3} className="ml-3">
             <Menu />
           </Col>
         </Row>

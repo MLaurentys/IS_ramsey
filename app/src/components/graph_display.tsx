@@ -39,18 +39,18 @@ function renderSimulation(props) {
           </Col>
         </Row>
       </div>
-      <Row style={{ height: "600px" }}>
-        <Col md={1}></Col>
+      <Row style={{ height: "600px" }} className="ml-2">
         <Col
           style={{
             backgroundColor: "grey",
             border: "10px solid black",
             padding: "0",
           }}
-          md={10}
+          md={6}
         >
           <Graph />
         </Col>
+        <Col></Col>
       </Row>
     </>
   );
