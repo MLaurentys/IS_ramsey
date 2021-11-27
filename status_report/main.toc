@@ -1,0 +1,4 @@
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
+\contentsline {chapter}{\numberline {2}Status}{6}{chapter.2}
+\contentsline {chapter}{\numberline {3}Exploring blindness}{7}{chapter.3}
+\contentsline {chapter}{\numberline {A}Appendix A}{9}{appendix.A}

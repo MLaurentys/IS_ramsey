@@ -1,0 +1,182 @@
+\begin{thebibliography}{BUvdH98}
+
+\bibitem[1]{1}
+D.M. Breuker, J.W.H.M. Uiterwijk, and H.J. van~den Herik.
+\newblock Solveing $8\times 8$ domineering.
+\newblock {\em Department of Computer Science, MATRIKS Research Institute,
+  Universiteit Maast}, 1998.
+
+
+
+
+
+\bibitem[10]{10}
+Kim Yonghoam.
+\newblock New values in domineering.
+\newblock {\em Theoretical Computer Science, V156, I 1-2, P 263-280}, 1996.
+
+
+
+
+
+\bibitem[11]{11}
+J.W.H.M. Uiterwijk and Michael Barton.
+\newblock New results for domineering from combinatorial game theory endgame
+  databases.
+\newblock {\em Department of Data Science and Knowledge Engineering Maastricht
+  University}, 2015.
+
+
+
+
+
+\bibitem[12]{12}
+Svenja Huntemann, Nowakowski~Richard J., and Carlos Pereira~Dos Santos.
+\newblock Bounding game temperature using confusion intervals.
+\newblock {\em Department of Data Science and Knowledge Engineering Maastricht
+  University}, 2019.
+
+
+
+
+
+\bibitem[13]{13}
+Ajeet Shankar and Manu Sridharan.
+\newblock New temperatures in domineering.
+\newblock {\em Eletronic journal of combinatorial number theory}, 2005.
+
+
+
+
+
+\bibitem[2]{2}
+J.W.H.M. Uiterwijk.
+\newblock $11\times 11$ domineering is solved: The first player wins.
+\newblock {\em Department of Data Science and Knowledge Engineering
+  (DKE)Maastricht University}, 2016.
+
+
+
+
+
+\bibitem[3]{3}
+Erik~D. Demaine and Robert~Aubrey Hearn.
+\newblock Playing games with algorithms: Algorithmic combinatorial game theory.
+\newblock {\em Games of No Chance 3 - Volume 56}, 2009.
+
+
+
+
+
+\bibitem[4]{4}
+Robert~Aubrey Hearn.
+\newblock {\em Games, Puzzles, and Computation}.
+\newblock PhD thesis, Massachusetts Institute of Technology, 2006.
+
+
+
+
+
+\bibitem[5]{5}
+Svenja Huntemann.
+\newblock {\em The Class of Strong Placement Games: Complexes, Values, and
+  Temperature}.
+\newblock PhD thesis, Daloise University, 2018.
+
+
+
+
+
+\bibitem[6]{6}
+Elwyn~Ralph Berlekamp.
+\newblock The economist’s view of combinatorial games.
+\newblock {\em Games of No Chance - Volume 29}, 1996.
+
+
+
+
+
+\bibitem[7]{7}
+Philip Ehrlich.
+\newblock The absolute arithmetic continuum and the unification of all numbers
+  great and small.
+\newblock {\em The Bulletin of Symbolic Logic, 18(1), 1-45}, 2012.
+
+
+
+
+
+\bibitem[8]{8}
+Simon Rubinstein-Salzedo and Ashvin Swaminathan.
+\newblock Analysis on surreal numbers.
+\newblock {\em The Bulletin of Symbolic Logic, 18(1), 1-45}, 2012.
+
+
+
+
+
+\bibitem[9]{9}
+Antongiulio Fornasiero.
+\newblock {\em Integration on surreal numbers}.
+\newblock PhD thesis, University of Edinburgh, 2004.
+
+
+
+
+
+\bibitem[CGT]{CGT}
+Aaron~Nathan Siegel.
+\newblock {\em Combinatorial Game Theory}.
+\newblock American Mathematical Society, 1st edition, 2013.
+
+
+
+
+
+\bibitem[GONC]{GONC}
+Richard~Joseph Nowakowski, editor.
+\newblock {\em Games of No Chance}, volume~29.
+\newblock Mathematical Sciences Research Institute, 1996.
+
+
+
+
+
+\bibitem[ONAG1]{ONAG1}
+John~Horton Conway.
+\newblock {\em On Numbers And Games}.
+\newblock Academic Press, 1st edition, 1976.
+
+
+
+
+
+\bibitem[ONAG2]{ONAG2}
+John~Horton Conway.
+\newblock {\em On Numbers And Games}.
+\newblock Academic Press, 2nd edition, 2001.
+
+
+
+
+
+\bibitem[SN]{SN}
+Donald~Ervin Knuth.
+\newblock {\em Surreal Numbers: How Two Ex-Students Turned on to Pure
+  Mathematics and Found Total Happiness}.
+\newblock Mathematical Sciences Research Institute, 1996.
+
+
+
+
+
+\bibitem[WW]{WW}
+Elwyn~Ralph Berlekamp, John~Horton Conway, and Richard~Kenneth Guy.
+\newblock {\em Winning Ways for your mathematical plays}, volume~1.
+\newblock Academic Press, 2nd edition, 1982.
+
+
+
+
+
+\end{thebibliography}
