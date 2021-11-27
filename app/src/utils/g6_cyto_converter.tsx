@@ -91,6 +91,5 @@ function getGraph(numVerts: number, binUpper: string): any {
 export function graph6ToCyto(representation: string): any {
   const numVerts = representation.charCodeAt(0) - 63;
   const binUpper = getBinaryRepresentation(representation.slice(1));
-  console.log(binUpper);
   return getGraph(numVerts, binUpper);
 }

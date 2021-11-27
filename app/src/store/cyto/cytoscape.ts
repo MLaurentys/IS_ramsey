@@ -9,7 +9,6 @@ import { addStyles } from "../../utils/misc";
 
 function buildNewGraph(graphInfo: any, cyto: Core) {
   // Removes all vertices and, therefore, all edges
-  console.log(graphInfo.edges[0]);
   cyto.remove("node");
   cyto.add(graphInfo.vertices);
   cyto.add(graphInfo.edges);

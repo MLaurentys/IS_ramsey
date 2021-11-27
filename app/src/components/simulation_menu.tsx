@@ -34,6 +34,7 @@ class SelectionMenu extends Component<any, {}> {
         </Row>
         <Row className="mb-5">
           <textarea
+            readOnly={true}
             style={{ height: "400px" }}
             defaultValue={JSON.stringify(
               this.props.simulations[this.props.selected],

@@ -7,8 +7,8 @@ export default {
   `,
   steps: [
     {
-      graph: "K?????qoOK@H",
-      colors: "bbbbbbbbbbr",
+      graph: "Sh??????AO?`?a?O_CO?`????AG??G??C",
+      colors: "bbbrbbbbrbbbrbbgbbb",
       title: "Induction Step (2/3)",
       description: `
         Connect the parents of the leaf removed.

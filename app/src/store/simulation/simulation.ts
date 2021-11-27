@@ -47,7 +47,7 @@ const handlers: SimulationReducerMap = Object.seal({
 
 export function SimulationReducer(
   state: any = {
-    simulations: [testSimulation, treeSimulation, farysSimulation],
+    simulations: [treeSimulation], // testSimulation, farysSimulation],
     selected: 0,
     simulation: [],
     stepTimeoutId: null,

@@ -7,39 +7,38 @@ export default {
   `,
   steps: [
     {
-      graph: "F?AZO",
-      colors: "rrrrrr",
-      title: "Simulation clarification:",
-      description: `
-        In the visual example, the target will be a complete binary tree with
-        seven vertices. It shows how to create it from a balanced binary
-        tree with six vertices.
-      `,
-      duration: 6000,
-    },
-    {
-      graph: "F?AZO",
-      colors: "rrrrrr",
+      graph: "",
+      colors: "",
       title: "Method:",
       description: `
         Note that showing that every tree is unavoidable in the class of
         forests is sufficient. This will be shown via induction in the number of
         vertices.
       `,
-      duration: 4000,
+      duration: 3000,
     },
     {
-      graph: "F?AZO",
-      colors: "rrrrrr",
+      graph: "D@s",
+      colors: "wwwww",
       title: "Let:",
       description: `
-        Take any tree T with n vertices, with n > 1. T will be the target.
+        Take any tree T with N vertices, with N > 1. T will be the target.
       `,
       duration: 5000,
     },
     {
-      graph: "E?NO",
-      colors: "bbbbb",
+      graph: "D@s",
+      colors: "wwwww",
+      title: "Simulation clarification:",
+      description: `
+        In the visual example, consider that the selected tree is the one shown,
+        with five vertices (N = 5).
+      `,
+      duration: 6000,
+    },
+    {
+      graph: "CR",
+      colors: "rrr",
       title: "Induction Hypotesis",
       description: `
         Take a second tree T', created by removing a leaf of T. Suppose, via
@@ -49,41 +48,44 @@ export default {
       duration: 5000,
     },
     {
-      graph: "K?????EAPcWG",
-      colors: "bbbbbbbbbb",
+      graph: "Sh???????O?`?_?O_C??`?????G??G??C",
+      colors: "bbbbbbbbbbbbbbbb",
       title: "Induction Step (1/3)",
       description: `
-        Since the Builder can force a copy of T', he/she can also force n copies
-        of T'.
+        Since the Builder can force a copy of T', he/she can also force N
+        monochromatic copies of T'.
       `,
       duration: 5000,
     },
     {
-      graph: "K?????qoOK@H",
-      colors: "bbbbbbbbbbr",
+      graph: "Sh??????AO?`?a?O_CO?`????AG??G??C",
+      colors: "bbbgbbbbwbbbwbbwbbb",
       title: "Induction Step (2/3)",
       description: `
-        Connect the parents of the leaf removed.
+        Connect the parents of the vertices correpondant to the leaves removed in
+        each of the copies of T'.
       `,
-      duration: 3000,
+      duration: 5000,
     },
     {
-      graph: "K?????EAPcWG",
-      colors: "bbbbbbbbbb",
+      graph: "Sh??????AO?`?a?O_CO?`????AG??G??C",
+      colors: "bbbrbbbbrbbbrbbwbbb",
       title: "Induction Step (3/3)",
       description: `
-        Note that the last edge cannot be either color. It either turns a T'
-        into a T, or creates T considering all the added edges.
+        Note that the each of the new edges cannot be colored blue, since that
+        would form a monochromatic copy of T. However, the last edge cannot be
+        colored neither blue nor red, as it would form a monochromatic copy of T,
+        either blue or red.
       `,
-      duration: 3000,
+      duration: 10000,
     },
     {
-      graph: "aDc",
-      colors: "bbbbb",
+      graph: "Sh??????AO?`?a?O_CO?`????AG??G??C",
+      colors: "bbbwbbbbwbbbwbbwbbb",
       title: "Therefore",
       description: `
-        Since any tree can be constructed via smaller tree, and the case n = 1
-        is trivial, any tree is unavoidable in the class of trees.
+        Any tree is unavoidable in the class of forrests. This also means that any
+        forest is unavoidable in the class of forests.
       `,
       duration: 3000,
     },

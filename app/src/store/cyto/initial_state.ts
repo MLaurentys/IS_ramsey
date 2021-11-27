@@ -2,7 +2,8 @@ import { CytoscapeState } from "../../types/types";
 // TODO: use nauty G-6
 export const initialState: CytoscapeState = {
   layout: {
-    name: "grid",
+    name: "cose-bilkent",
+    // @ts-ignore
     rows: 1,
   },
   cy: undefined,
@@ -24,9 +25,10 @@ export const initialState: CytoscapeState = {
     },
   ],
   edges: [
-    { classes: "blue-edge", data: { id: "ac", source: "a", target: "c" } },
     {
-      classes: "blue-edge",
+      data: { id: "ac", source: "a", target: "c" },
+    },
+    {
       data: { id: "ae", source: "a", target: "e" },
     },
     {
@@ -46,15 +48,6 @@ export const initialState: CytoscapeState = {
       },
     },
     {
-      selector: "edge",
-      style: {
-        width: 3,
-        "line-color": "#ccc",
-        "target-arrow-color": "#ccc",
-        "curve-style": "bezier",
-      },
-    },
-    {
       selector: ".red-edge",
       style: {
         "line-color": "#ff0000",
@@ -67,11 +60,15 @@ export const initialState: CytoscapeState = {
       },
     },
     {
-      selector: "#ac",
+      selector: ".white-edge",
       style: {
-        width: 3,
-        "line-color": "#f00",
-        "curve-style": "bezier",
+        "line-color": "#ffffff",
+      },
+    },
+    {
+      selector: ".gray-edge",
+      style: {
+        "line-color": "#cccccc",
       },
     },
   ],
