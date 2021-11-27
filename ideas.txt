@@ -1,0 +1,23 @@
+- Describe what is Ramsey Theory
+- Say what is an online algorithm
+    - Give Canadian Traveller Problem example?
+- Tell when Online Ramsey Theory showed up
+- Show they study solving the same problem
+- Show differences of online version
+- Show initial results (2004)
+- Show current developments (up to 2019)
+- Point to further resources
+
+
+
+The relation between the offline
+and the online theory is that if G is Ramsey big for H then Builder can force a
+monochromatic copy of H on G. However, the opposite implication does not hold
+as we see from the result of Grytczuk et al. [8].
+
+his is an interesting result because if we have a forest T we can color it such
+that it contains only monochromatic copies of stars. We can root every compo-
+nent C of T in some vertex v ∈ V (C) and color C alternatively by layers. The
+edges incident with v are blue, edges in the distance 1 from v are red and so on.
+Hence, any monochromatic subgraph of T is a star. Therefore, any forest T is
+not Ramsey big for any forest T′ such that T′ contains a path P3 as a subgraph. [masters]

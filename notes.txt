@@ -1,0 +1,12 @@
+On master thesis:
+ Theorem 1.2 page 9:
+ The relation between the offline
+and the online theory is that if G is Ramsey big for H then Builder can force a
+monochromatic copy of H on G. However, the opposite implication does not hold
+as we see from the result of Grytczuk et al. [8]. They studied Builder’s strategies
+when Builder has to draw a graph only from fixed classes
+
+ramsey arrowing vs big graph
+
+Did not find anywhere saying online algorithm is not competitive with normal one,
+although I know they are not competitive
