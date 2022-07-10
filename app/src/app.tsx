@@ -11,27 +11,30 @@ import GraphDisplay from "./components/graph_display";
 import store from "./store/store";
 import Header from "./components/header";
 import Menu from "./views/menu";
-
 import "./stylesheet.css";
 
 function App() {
   // Provider is used to allow any component to connect to the redux store.
   return (
-    <Container style={{ backgroundColor: "#d9b382", height: "100vh" }}>
-      <Row>
-        <Header />
-      </Row>
-      <Provider store={store}>
+    // @ts-ignore
+    <>
+      <is-header data-page="1"></is-header>
+      <Container style={{ backgroundColor: "#d9b382", height: "100vh" }}>
         <Row>
-          <Col md={9} className="mr-3">
-            <GraphDisplay />
-          </Col>
-          <Col md={3} className="ml-3">
-            <Menu />
-          </Col>
+          <Header />
         </Row>
-      </Provider>
-    </Container>
+        <Provider store={store}>
+          <Row>
+            <Col md={9} className="mr-3">
+              <GraphDisplay />
+            </Col>
+            <Col md={3} className="ml-3">
+              <Menu />
+            </Col>
+          </Row>
+        </Provider>
+      </Container>
+    </>
   );
 }
 

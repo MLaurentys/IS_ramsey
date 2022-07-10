@@ -29,7 +29,7 @@
 
 \usetikzlibrary{patterns}
 \usetikzlibrary{arrows.meta}
-
+\usetikzlibrary{positioning,shapes.multipart,shapes}
 \graphicspath{{images/}}
 
 \definecolor{mycolor}{RGB}{30,75,180}
@@ -102,6 +102,22 @@
 	frame = single
 }
 
+\lstdefinelanguage{json}{
+	basicstyle=\normalfont\ttfamily,
+	stepnumber=1,
+	numbersep=8pt,
+	showstringspaces=false,
+	breaklines=true,
+	frame=lines,
+	backgroundcolor=\color{background}
+}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{FAFAFA}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
 
 %----------------------------------------------------------------------------------------------------%
 
@@ -109,27 +125,27 @@
 \begin{document}
 	\newpage
     \input{sections/title}
-
-    \input{sections/abstract}
-
-% Table of contents, list of figures, and list of tables
-    {\hypersetup{linkcolor=black}
-        \tableofcontents
-    }
-        {\hypersetup{linkcolor=mycolor}}
     
-% Introduction
-    \chapter{Introduction} 
+    \chapter*{Introduction} 
     \input{sections/introduction}
     
-    \chapter{Status}
-    \input{sections/status}
+    \chapter*{Online Ramsey Theory}
+    \input{sections/theory}
     
-    \chapter{Exploring blindness}
-    \input{sections/exploring}
+    \chapter*{Visualization Tool}
+    \input{sections/visualization}
+    
+    \chapter*{Lessons Learned}
+    \input{sections/lessons}
+    
+    \phantomsection
+    \nocite{*}
+    \addcontentsline{toc}{chapter}{References}%
+    \bibliography{bibliography}
     
     \appendix
-    \chapter{Appendix A}
+    \chapter*{Appendix A}
+    \input{sections/appendix_A}
     
 
 \end{document}

@@ -11,19 +11,23 @@
     <meta name="author" content="Matheus T. de Laurentys" />
     <!-- <link rel="icon" href="" /> -->
     <title>IS Ramsey</title>
-    <link rel="stylesheet" href="./css/stylesheet.css" />
+    <link rel="stylesheet" href="../css/stylesheet.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.net.min.js"></script>
+    <script type="module" src="../src/main.js"></script>
   </head>
   <body>
+    <is-header data-page="3"></is-header>
     <h1 class="text-center">Activities Log</h1>
     <div class="mb-2" style="width: 100%; text-align: center; font-size: 12px">
       <span>
-        This file contains brief descriptions of activities done by date. Its
+        This page contains brief descriptions of activities done by date. Its
         purpose is reporting to the student supervisor and maining data on the
         progress done per period of time.
       </span>
@@ -43,93 +47,161 @@
           <ul>
             <li>Should have 135 hours dedicated to the project</li>
             <li>~9 hours a week</li>
-            <li>By the end of week 9, around 81 hours expected</li>
           </ul>
         </div>
         <div class="col-md-3">
           <ul>
-            <li>Week 10 total: 81 hours</li>
-            <li>Behind schedule: 11h</li>
-            <li>Hours per week until end of semester: 11h</li>
+            <li>Week 16 total: 135 hours</li>
+            <li>Hours per week until end of semester: 0h</li>
           </ul>
         </div>
-        <div class="col-md-3">94 / 135</div>
+        <div class="col-md-3">135 / 135</div>
       </div>
       <div></div>
       <div></div>
+      <div id="week-16" class="row">
+        <div class="col-md-3">16</div>
+        <div class="col-md-3">
+          <ul>
+            <li>Write a report of the work done during the semester</li>
+            <li>
+              Outline main challenges faced both during the implementation of
+              the proof visualization and the writing of the report
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul>
+            <li>Revised report with content and recent inclusions</li>
+          </ul>
+        </div>
+        <div class="col-md-3">8</div>
+      </div>
+      <div id="week-15" class="row">
+        <div class="col-md-3">15</div>
+        <div class="col-md-3">
+          <ul>
+            <li>Write a report of the work done during the semester</li>
+            <li>
+              Outline main challenges faced both during the implementation of
+              the proof visualization and the writing of the report
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul>
+            <li>Revised report after evaluation, adding more content</li>
+            <li>Made the website for IS home page</li>
+          </ul>
+        </div>
+        <div class="col-md-3">16</div>
+      </div>
+      <div id="week-14" class="row">
+        <div class="col-md-3">14</div>
+        <div class="col-md-3">
+          <ul>
+            <li>Write a report of the work done during the semester</li>
+            <li>
+              Outline main challenges faced both during the implementation of
+              the proof visualization and the writing of the report
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul>
+            <li>Finished the APP</li>
+            <li>Wrote final report</li>
+            <li>Wrote self-evaluation</li>
+          </ul>
+        </div>
+        <div class="col-md-3">30</div>
+      </div>
+      <div id="week-13" class="row">
+        <div class="col-md-3">13</div>
+        <div class="col-md-3">
+          <ul>
+            <li>Write a report of the work done during the semester</li>
+            <li>
+              Outline main challenges faced both during the implementation of
+              the proof visualization and the writing of the report
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul>
+            <li>TODO: Finish the app</li>
+            <li>
+              Stopped working on the status report: idea seems to optimistic to
+              current progress
+            </li>
+            <li>Wrote bibliography for the final report</li>
+            <li>Researched structure for the text and prepared files</li>
+          </ul>
+        </div>
+        <div class="col-md-3">4</div>
+      </div>
+      <div id="week-12" class="row">
+        <div class="col-md-3">12</div>
+        <div class="col-md-3">
+          <ul>
+            <li>
+              Gather all papers that discuss Online Ramsey Games played on
+              Planar Graphs
+            </li>
+            <li>
+              Write a report that tells the status and the important mile-
+              stones in this area of study
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul>
+            <li>TODO: Finish the app</li>
+            <li>TODO: Fish writing status report</li>
+          </ul>
+        </div>
+        <div class="col-md-3">0</div>
+      </div>
       <div id="week-11" class="row">
         <div class="col-md-3">11</div>
         <div class="col-md-3">
           <ul>
             <li>
-              Use a visualization tool to generate a proof that every forestin
-              unavoidable in the class of forests
+              Gather all papers that discuss Online Ramsey Games played on
+              Planar Graphs
             </li>
             <li>
-              Show that if all trees with n vertices are unavoidable, then so
-              are all trees with n+1 vertices
-            </li>
-            <li>
-              This would be done by following the inductive proof pro-vided on
-              Online Ramsey Theory [1]
+              Write a report that tells the status and the important mile-
+              stones in this area of study
             </li>
           </ul>
         </div>
         <div class="col-md-3">
           <ul>
-            <li>TODO: Finish the app (make a video/presentation)</li>
-            <li>TODO: Fish writing status report</li>
+            <li>TODO: Finish the app</li>
+            <li>Wrote about the extension of the Ramsey Game studied</li>
+            <li>Finished selecting topics for section 2 of status report</li>
           </ul>
         </div>
-        <div class="col-md-3">3</div>
+        <div class="col-md-3">8</div>
       </div>
       <div id="week-10" class="row">
         <div class="col-md-3">10</div>
         <div class="col-md-3">
           <ul>
             <li>
-              Use a visualization tool to generate a proof that every forestin
-              unavoidable in the class of forests
+              Gather all papers that discuss Online Ramsey Games played on
+              Planar Graphs
             </li>
             <li>
-              Show that if all trees withnvertices are unavoidable, thenso are
-              all trees withn+ 1vertices
-            </li>
-            <li>
-              This would be done by following the inductive proof pro-vided on
-              Online Ramsey Theory [1]
+              Write a report that tells the status and the important mile-
+              stones in this area of study
             </li>
           </ul>
         </div>
         <div class="col-md-3">
           <ul>
-            <li>TODO: Finish the app (make a video/presentation)</li>
-            <li>TODO: Fish writing status report</li>
-          </ul>
-        </div>
-        <div class="col-md-3">12</div>
-      </div>
-      <div id="week-10" class="row">
-        <div class="col-md-3">10</div>
-        <div class="col-md-3">
-          <ul>
-            <li>
-              Use a visualization tool to generate a proof that every forestin
-              unavoidable in the class of forests
-            </li>
-            <li>
-              Show that if all trees withnvertices are unavoidable, thenso are
-              all trees withn+ 1vertices
-            </li>
-            <li>
-              This would be done by following the inductive proof pro-vided on
-              Online Ramsey Theory [1]
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <ul>
-            <li>TODO: Finish the app (make a video/presentation)</li>
+            <li>TODO: Finish the app</li>
             <li>Revised introduction</li>
             <li>
               Studied an extension of the game where Right is more powerful
@@ -143,22 +215,18 @@
         <div class="col-md-3">
           <ul>
             <li>
-              Use a visualization tool to generate a proof that every forestin
-              unavoidable in the class of forests
+              Gather all papers that discuss Online Ramsey Games played on
+              Planar Graphs
             </li>
             <li>
-              Show that if all trees withnvertices are unavoidable, thenso are
-              all trees withn+ 1vertices
-            </li>
-            <li>
-              This would be done by following the inductive proof pro-vided on
-              Online Ramsey Theory [1]
+              Write a report that tells the status and the important mile-
+              stones in this area of study
             </li>
           </ul>
         </div>
         <div class="col-md-3">
           <ul>
-            <li>TODO: Finish the app (make a video/presentation)</li>
+            <li>TODO: Finish the app</li>
             <li>
               Made a list of sources and marked content to use in my report
             </li>
@@ -174,15 +242,15 @@
         <div class="col-md-3">
           <ul>
             <li>
-              Use a visualization tool to generate a proof that every forestin
+              Use a visualization tool to generate a proof that every forest is
               unavoidable in the class of forests
             </li>
             <li>
-              Show that if all trees withnvertices are unavoidable, thenso are
-              all trees withn+ 1vertices
+              Show that if all trees with <em>n</em> vertices are unavoidable,
+              then so are all trees with <em>n+1</em> vertices
             </li>
             <li>
-              This would be done by following the inductive proof pro-vided on
+              This would be done by following the inductive proof provided on
               Online Ramsey Theory [1]
             </li>
           </ul>
@@ -211,15 +279,15 @@
         <div class="col-md-3">
           <ul>
             <li>
-              Use a visualization tool to generate a proof that every forestin
+              Use a visualization tool to generate a proof that every forest is
               unavoidable in the class of forests
             </li>
             <li>
-              Show that if all trees withnvertices are unavoidable, thenso are
-              all trees withn+ 1vertices
+              Show that if all trees with <em>n</em> vertices are unavoidable,
+              then so are all trees with <em>n+1</em> vertices
             </li>
             <li>
-              This would be done by following the inductive proof pro-vided on
+              This would be done by following the inductive proof provided on
               Online Ramsey Theory [1]
             </li>
           </ul>
@@ -251,7 +319,7 @@
           <ul>
             <li>
               Develop a program that simulates a builder-painter game for planar
-              graphs. It draws the planar embedding of thegraphs generated
+              graphs. It draws the planar embedding of the graphs generated
               during play
             </li>
           </ul>
@@ -277,7 +345,7 @@
           <ul>
             <li>
               Develop a program that simulates a builder-painter game for planar
-              graphs. It draws the planar embedding of thegraphs generated
+              graphs. It draws the planar embedding of the graphs generated
               during play
             </li>
           </ul>
@@ -300,7 +368,7 @@
           <ul>
             <li>
               Develop a program that simulates a builder-painter game for planar
-              graphs. It draws the planar embedding of thegraphs generated
+              graphs. It draws the planar embedding of the graphs generated
               during play
             </li>
           </ul>
@@ -323,7 +391,7 @@
           <ul>
             <li>
               Develop a program that simulates a builder-painter game for planar
-              graphs. It draws the planar embedding of thegraphs generated
+              graphs. It draws the planar embedding of the graphs generated
               during play
             </li>
           </ul>
@@ -345,7 +413,7 @@
           <ul>
             <li>
               Develop a program that simulates a builder-painter game for planar
-              graphs. It draws the planar embedding of thegraphs generated
+              graphs. It draws the planar embedding of the graphs generated
               during play
             </li>
           </ul>

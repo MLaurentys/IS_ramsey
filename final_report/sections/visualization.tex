@@ -1,0 +1,44 @@
+The tool developed during the semester draws simulations using graphs, specified in JSON format, in a canvas. The drawing and canvas interaction part of the application are accomplished using the cytoscapejs library while the interface and simulation functionality were developed specifically for this project. The tool has limited user customization options, but allows the drawing of any graph using a pre-defined layout algorithm.
+
+\subsection*{Simulation specification}
+
+The simulation used by the application is specified via JSON using the following schema:
+
+\begin{lstlisting}[language=json,firstnumber=1,escapechar=*]
+{
+	"title": "Title displayed on page",
+	"description": "Description showed together with title",
+	"steps": [
+		{
+			"graph": "String representation of graph using graph6*\footnote{Compact representation of graphs via strings. Format created by Brendan McKay. Find the specification at https://users.cecs.anu.edu.au/$\sim$bdm/data/formats.txt.}* format.",
+			"colors": "color of each edge in the graph, in the order used in the upper triangle of the 'graph'. Specified with a sequence of characters between 'r' (red),  *\mbox{'b' (blue)}*, 'g' (gray) and 'w' (white).",
+			"title": "Step title",
+			"description": "Step description.",
+			"duration": [0-9]+ //seconds the current step is displayed
+		},
+		*$\cdots$*
+	]
+}
+\end{lstlisting}
+
+The app uses the schema above to create a visualization of the theorem proving that forests are self-unavoidable in the Online Ramsey Game\footnote{More details on the next section.}. The JSON string of this simulation is found on the side menu of the application.
+
+\subsection*{Technologies used}
+
+The app was developed using \texttt{Nodejs}, is implemented in \texttt{TypeScript} and is based on \texttt{React} and \texttt{Redux} frameworks. The conversion to static HTML and JavaScript is done via \texttt{webpack}. The code has the most typical view/component/store architecture. There is no connection to backend services or databases. The app is available on this study's github page\footnote{https://github.com/MLaurentys/IS\_ramsey.}.
+
+\subsection*{Future developments}
+
+One of the important steps forward is improving the graph definition on the simulation JSON file. Using graph6 or another common string formatting is adequate but there is no good online tools for drawing graphs and getting their strings. \textit{House of graphs\footnote{Find more on https://hog.grinvin.org/}} has one built-in but it is limited is some regards. It only shows a limited number of character of the string conversion (being useless for graphs with over ~20 vertices) and the querying of graphs drawing destroys the current canvas, meaning similar queries involve a lot of repeated drawing.
+
+A good way to improve the graph definition is developing the graph6 functionality of the application further. Allowing a similar drawing style to that of House of Graphs but with real-time graph6 conversions would solve most of the issues creating new simulations. However, the problem of specifying the edge colors would remain. To solve that, the app should also display the order of edges or allow for coloring via canvas, with a similar style of real-time conversion.
+
+Another necessity is improving the layout algorithm choices. Neither cytoscapejs nor other graph drawing frameworks have layout algorithms that guarantee drawings of planar graphs without crossing edges. Implementing such algorithms for the main libraries would be a good step forward to make the simulation better. Another related improvement is allowing the user to pick a layout in the simulation specification.
+
+
+
+
+
+
+
+

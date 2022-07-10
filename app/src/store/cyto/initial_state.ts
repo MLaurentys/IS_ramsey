@@ -44,7 +44,6 @@ export const initialState: CytoscapeState = {
       selector: "node",
       style: {
         "background-color": "#666",
-        label: "data(id)",
       },
     },
     {

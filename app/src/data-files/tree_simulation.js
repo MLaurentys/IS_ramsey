@@ -15,7 +15,7 @@ export default {
         forests is sufficient. This will be shown via induction in the number of
         vertices.
       `,
-      duration: 3000,
+      duration: 5000,
     },
     {
       graph: "D@s",
@@ -24,7 +24,7 @@ export default {
       description: `
         Take any tree T with N vertices, with N > 1. T will be the target.
       `,
-      duration: 5000,
+      duration: 6000,
     },
     {
       graph: "D@s",
@@ -34,7 +34,7 @@ export default {
         In the visual example, consider that the selected tree is the one shown,
         with five vertices (N = 5).
       `,
-      duration: 6000,
+      duration: 8000,
     },
     {
       graph: "CR",
@@ -45,7 +45,7 @@ export default {
         induction, that the Builder can force the Painter to create a
         monochromatic copy of T'.
       `,
-      duration: 5000,
+      duration: 8000,
     },
     {
       graph: "Sh???????O?`?_?O_C??`?????G??G??C",
@@ -55,7 +55,7 @@ export default {
         Since the Builder can force a copy of T', he/she can also force N
         monochromatic copies of T'.
       `,
-      duration: 5000,
+      duration: 8000,
     },
     {
       graph: "Sh??????AO?`?a?O_CO?`????AG??G??C",
@@ -65,7 +65,7 @@ export default {
         Connect the parents of the vertices correpondant to the leaves removed in
         each of the copies of T'.
       `,
-      duration: 5000,
+      duration: 8000,
     },
     {
       graph: "Sh??????AO?`?a?O_CO?`????AG??G??C",
